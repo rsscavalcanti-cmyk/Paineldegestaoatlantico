@@ -3,149 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PAINEL DE GESTÃO — Atlântico Golf</title>
-  <meta name="description" content="Atalhos rápidos para os painéis do Atlântico Golf — mobile-first, com paleta e identidade System Engenharia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Atlântico Golf — Painéis operacionais</title>
+  <meta name="description" content="System Engenharia · Atlântico Golf — Painéis operacionais" />
+  <link rel="icon" href="https://logo.clearbit.com/systemengenharia.com.br">
   <style>
     :root{
-      --brand:#005b96;
-      --brand-acc:#2b8ccc;
-      --brand-dark:#003a61;
-      --bg:#0b1220;
-      --panel:#0f172a;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --border:#1f2937;
-      --ring:rgba(0,91,150,.45);
+      --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --brand:#2b8ccc; --brand2:#005b96; --border:#1f2937; --hover:#1d4ed8
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-
-    .shell{max-width:720px;margin:0 auto}
-
-    .brandbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.06);
-      background:linear-gradient(135deg,var(--brand),var(--brand-acc));
-      color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.25)}
-    .brandbar .logo{width:56px;height:56px;border-radius:14px;overflow:hidden;flex-shrink:0;display:grid;place-items:center;background:#0001}
-    .brandbar .logo img{width:100%;height:100%;object-fit:contain}
-    .brandbar .brandtext{display:flex;flex-direction:column}
-    .brandbar .brandtext .name{font-weight:800;letter-spacing:.3px;font-size:18px}
-    .brandbar .brandtext .sub{opacity:.95;font-size:13px}
-
-    h1{margin:14px 20px 0;font-size:26px;line-height:1.15;font-weight:800}
-
-    .grid{margin:14px 20px 20px;display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
-
-    .card{position:relative;border:1px solid var(--border);background:var(--panel);border-radius:16px;padding:16px;text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center;isolation:isolate}
-    .card:focus,.card:hover{outline:2px solid var(--ring);outline-offset:0}
-    .card .icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-acc))}
-    .card h3{margin:0;font-size:18px}
-    .card p{margin:2px 0 0;color:var(--muted);font-size:14px}
-    .open{margin-left:auto;font-size:12px;color:#cbd5e1;border:1px solid #334155;border-radius:999px;padding:6px 10px}
-    .open:hover{background:#0b1220}
-
-    .footer{margin:8px 0 20px;color:var(--muted);font-size:12px;text-align:center}
-
-    a:focus-visible{outline:3px solid var(--ring)}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    .wrap{max-width:900px;margin:48px auto;padding:0 16px}
+    header{margin-bottom:24px;text-align:center}
+    header img{width:60px;height:60px;border-radius:12px;display:block;margin:0 auto 12px}
+    header h1{font-size:clamp(28px,5vw,42px);margin:0;color:#fff}
+    header p{font-size:clamp(14px,2vw,18px);margin:8px 0 0;color:var(--muted);font-weight:400}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:32px}
+    .card{background:var(--card);border:1px solid var(--border);padding:24px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.25);text-align:center;display:flex;flex-direction:column;justify-content:space-between}
+    .card h2{font-size:20px;margin:0 0 12px}
+    .card p{margin:0 0 20px;color:var(--muted)}
+    .card a{display:inline-block;text-decoration:none;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:12px 24px;border-radius:30px;font-weight:600;font-size:16px;transition:all 0.25s ease;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+    .card a:hover{background:var(--hover);transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.4)}
+    .foot{margin-top:28px;color:var(--muted);font-size:14px;text-align:center}
   </style>
 </head>
 <body>
-  <div class="shell">
-    <header class="brandbar">
-      <div class="logo" aria-hidden="true">
-        <img id="seLogo" alt="Logo System Engenharia" src="https://logo.clearbit.com/systemengenharia.com.br" referrerpolicy="no-referrer" />
-      </div>
-      <div class="brandtext">
-        <span class="name">System Engenharia</span>
-        <span class="sub">Atlântico Golf — Painéis operacionais</span>
-      </div>
+  <div class="wrap">
+    <header>
+      <img src="https://logo.clearbit.com/systemengenharia.com.br" alt="Logo System Engenharia"/>
+      <h1>Atlântico Golf</h1>
+      <p>Painéis operacionais</p>
     </header>
 
-    <h1>PAINEL DE GESTÃO</h1>
+    <div class="grid">
+      <section class="card">
+        <h2>Resumo Financeiro</h2>
+        <p>Caderno de Informações — Setembro/25.</p>
+        <a href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf---Caderno-de-Informa-es/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      </section>
 
-    <nav class="grid" aria-label="atalhos do painel">
-      <a class="card" target="_blank" rel="noopener" href="https://rsscavalcanti-cmyk.github.io/Atl-ntico-Golf---Caderno-de-Informa-es/">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 4h7l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="white" stroke-width="1.6"/>
-            <path d="M13 4v5h5" stroke="white" stroke-width="1.6"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Resumo Financeiro</h3>
-          <p>Caderno de Informações — Setembro/25.</p>
-        </div>
-        <span class="open">abrir</span>
-      </a>
+      <section class="card">
+        <h2>Quadro Kanbam</h2>
+        <p>Distribuição / status de serviços.</p>
+        <a href="https://rsscavalcanti-cmyk.github.io/Quadrosemanalencarregadosatlantico/?v=25" target="_blank" rel="noopener noreferrer">Abrir</a>
+      </section>
 
-      <a class="card" target="_blank" rel="noopener" href="https://rsscavalcanti-cmyk.github.io/Quadrosemanalencarregadosatlantico/?v=25">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 3v4M17 3v4M4 8h16M5 12h6M5 16h6M13 12h6M13 16h6" stroke="white" stroke-width="1.6"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Quadro Semanal</h3>
-          <p>Distribuição / status de serviços.</p>
-        </div>
-        <span class="open">abrir</span>
-      </a>
+      <section class="card">
+        <h2>Apresentação para reunião de engenharia</h2>
+        <p>Slides/visão para alinhamento da equipe.</p>
+        <a href="https://rsscavalcanti-cmyk.github.io/Atlantico_Golf_System_Engenharia/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      </section>
+    </div>
 
-      <a class="card" target="_blank" rel="noopener" href="https://rsscavalcanti-cmyk.github.io/Atlantico_Golf_System_Engenharia/">
-        <div class="icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4h16v10H4z" stroke="white" stroke-width="1.6"/>
-            <path d="M2 18h20" stroke="white" stroke-width="1.6"/>
-            <circle cx="12" cy="9" r="2.2" fill="white"/>
-          </svg>
-        </div>
-        <div>
-          <h3>Apresentação para reunião de engenharia</h3>
-          <p>Slides/visão para alinhamento da equipe.</p>
-        </div>
-        <span class="open">abrir</span>
-      </a>
-    </nav>
+    <div class="foot">© System Engenharia — Atlântico Golf</div>
   </div>
-
-  <script>
-    (function(){
-      const logoEl = document.getElementById('seLogo');
-      if(!logoEl) return;
-      const CANDIDATOS = [
-        'https://logo.clearbit.com/systemengenharia.com.br'
-      ];
-      const FALLBACK_DATA = `data:image/svg+xml,${encodeURIComponent(
-        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
-        +"<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>"
-        +"<stop offset='0' stop-color='%23005b96'/><stop offset='1' stop-color='%232b8ccc'/>"
-        +"</linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/>"
-        +"<text x='50' y='60' text-anchor='middle' font-size='54' fill='%23fff' font-family='Arial,Helvetica,sans-serif' font-weight='700'>SE</text>"
-        +"</svg>"
-      )}`;
-
-      function tenta(src){
-        return new Promise(resolve=>{
-          const img = new Image();
-          img.crossOrigin = 'anonymous';
-          img.onload = ()=> resolve(src);
-          img.onerror = ()=> resolve(null);
-          img.src = src;
-        });
-      }
-
-      (async()=>{
-        for(const src of CANDIDATOS){
-          const ok = await tenta(src);
-          if(ok){ logoEl.src = ok; return; }
-        }
-        logoEl.src = FALLBACK_DATA;
-      })();
-    })();
-  </script>
 </body>
 </html>
+
